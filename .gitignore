@@ -1,1 +1,20 @@
+# Dependencies — never upload these, they're huge
 node_modules/
+
+# Database files (not needed for this project but good habit)
+data/
+*.db
+
+# VS Code personal settings
+.vscode/
+
+# Windows system files
+Thumbs.db
+desktop.ini
+
+# Mac system files (good habit even on Windows)
+.DS_Store
+
+# Environment files (would contain passwords/secrets in future projects)
+.env
+
