@@ -1,0 +1,14 @@
+{
+  "name": "floofballs",
+  "version": "1.0.0",
+  "description": "A fun coding learning project — build and customise a landing page for Floofballs, the world's most pointless product.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": ["learning", "web-development", "express"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
