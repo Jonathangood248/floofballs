@@ -26,7 +26,7 @@
 const ctaButton = document.getElementById('cta-button');
 
 ctaButton.addEventListener('click', function () {
-  // Add your alert() here for Task 7!
+ alert("Yooooo!");
 });
 
 // ============================================
@@ -56,5 +56,6 @@ const counterElement = document.getElementById('floof-counter');
 // ============================================
 
 setInterval(function () {
-  // Add your counter logic here for Task 8!
+  floofCount += Math.floor(Math.random() * 5) + 1;
+counterElement.textContent = floofCount + " Floofballs sold today";
 }, 3000);

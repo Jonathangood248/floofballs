@@ -122,7 +122,7 @@ body {
   background: linear-gradient(135deg, #2d1b4e, #5b2d8e, #7b4bb3);
   color: #fff;
   text-align: center;
-  padding: 80px 2rem;
+  padding: 120px 2rem;
   min-height: 80vh;
   display: flex;
   align-items: center;
@@ -202,7 +202,7 @@ body {
 
 .features {
   padding: 80px 2rem;
-  background-color: #f3f0ff;
+  background-color: #1e6a3d5c;
 }
 
 /* Grid layout for the feature cards — responsive 3-column layout */
@@ -225,7 +225,7 @@ body {
 /* Individual feature cards — white with rounded corners */
 .feature-card {
   background: #fff;
-  padding: 1.5rem;
+  padding: 2rem;
   border-radius: 20px;
   text-align: center;
   box-shadow: 0 4px 20px rgba(45, 27, 78, 0.08);
