@@ -1,0 +1,426 @@
+/* ============================================
+   Floofballs Task Guide — Stylesheet
+   ============================================
+   This file styles the task guide app at /guide.
+   It uses the same fonts as the landing page
+   (Fredoka One + Nunito) for a consistent feel.
+
+   Layout: sidebar + main panel, with a progress
+   bar at the top and a live preview at the bottom.
+   ============================================ */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #2d1b4e;
+  background-color: #f8f6fc;
+  min-height: 100vh;
+}
+
+/* ============================================
+   PROGRESS BAR
+   ============================================
+   Fixed at the top of the page. Shows a
+   colourful fill that grows as tasks are done.
+   ============================================ */
+.progress-bar-container {
+  background: #2d1b4e;
+  padding: 12px 24px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+/* The track (background) of the progress bar */
+.progress-bar-track {
+  flex: 1;
+  height: 12px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+/* The colourful fill that represents progress */
+.progress-bar-fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #ff6b35, #ffb347);
+  border-radius: 10px;
+  transition: width 0.5s ease;
+}
+
+/* Progress text label (e.g. "3 of 8 tasks complete") */
+.progress-text {
+  font-family: 'Fredoka One', cursive;
+  font-size: 0.9rem;
+  color: #ffb347;
+  white-space: nowrap;
+}
+
+/* ============================================
+   MAIN LAYOUT
+   ============================================
+   Two-column layout: dark sidebar on the left,
+   white main panel on the right.
+   ============================================ */
+.layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  min-height: calc(100vh - 48px);
+}
+
+/* ============================================
+   SIDEBAR
+   ============================================
+   Dark purple sidebar with the task list.
+   Each task shows a number, title, and status.
+   ============================================ */
+.sidebar {
+  background: #1a0f2e;
+  padding: 24px 0;
+  overflow-y: auto;
+}
+
+/* Sidebar heading */
+.sidebar-title {
+  font-family: 'Fredoka One', cursive;
+  color: #ffb347;
+  font-size: 1.3rem;
+  padding: 0 20px 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* The task list — no bullet points */
+.task-list {
+  list-style: none;
+  margin-top: 8px;
+}
+
+/* Individual task items in the sidebar */
+.task-item {
+  padding: 14px 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: #c4b5d9;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: background 0.2s ease, color 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.task-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+}
+
+/* Currently selected/active task */
+.task-item.active {
+  background: rgba(255, 107, 53, 0.1);
+  color: #ffb347;
+  border-left-color: #ff6b35;
+}
+
+/* Completed task — green tint */
+.task-item.completed {
+  color: #6fcf97;
+}
+
+/* Task status icon (checkbox emoji) */
+.task-status {
+  font-size: 1.1rem;
+  flex-shrink: 0;
+}
+
+/* ============================================
+   MAIN PANEL
+   ============================================
+   The right side where task details appear.
+   Clean white background with plenty of space.
+   ============================================ */
+.main-panel {
+  padding: 40px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* Welcome message shown before selecting a task */
+.welcome-message {
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.welcome-message h1 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.2rem;
+  color: #2d1b4e;
+  margin-bottom: 1rem;
+}
+
+.welcome-message p {
+  font-size: 1.15rem;
+  color: #5a4a6e;
+  margin-bottom: 0.5rem;
+}
+
+.welcome-hint {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #8a7a9e;
+}
+
+.welcome-hint code {
+  background: #f3f0ff;
+  padding: 2px 8px;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   TASK DETAIL VIEW
+   ============================================
+   Shown when a task is selected. Contains
+   the task header, file info, instructions,
+   hints, check button, and result area.
+   ============================================ */
+
+/* Task number and title header */
+.task-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.task-number {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1rem;
+  background: linear-gradient(135deg, #ff6b35, #ffb347);
+  color: #fff;
+  padding: 6px 14px;
+  border-radius: 50px;
+  white-space: nowrap;
+}
+
+.task-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.8rem;
+  color: #2d1b4e;
+}
+
+/* File indicator — tells the user which file to edit */
+.task-file {
+  background: #f3f0ff;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 700;
+  color: #5b2d8e;
+  margin-bottom: 24px;
+  font-size: 0.95rem;
+}
+
+/* Task instructions — the detailed description */
+.task-instructions {
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3a2a5e;
+  margin-bottom: 24px;
+  padding: 20px;
+  background: #fafafa;
+  border-radius: 12px;
+  border-left: 4px solid #ffb347;
+}
+
+/* ============================================
+   HINT SECTION
+   ============================================
+   Collapsible hint — hidden by default.
+   Click the button to show/hide the hint text.
+   ============================================ */
+.hint-section {
+  margin-bottom: 24px;
+}
+
+/* Toggle button to show/hide hints */
+.hint-toggle {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 700;
+  background: none;
+  border: 2px dashed #c4b5d9;
+  color: #5b2d8e;
+  padding: 10px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.hint-toggle:hover {
+  background: #f3f0ff;
+  border-color: #5b2d8e;
+}
+
+/* The hint content — shown when toggled */
+.hint-content {
+  margin-top: 12px;
+  padding: 16px 20px;
+  background: #fff8e6;
+  border-radius: 12px;
+  border-left: 4px solid #ffb347;
+  font-size: 0.95rem;
+  color: #5a4a2e;
+  line-height: 1.7;
+}
+
+/* ============================================
+   CHECK / ACTION BUTTONS
+   ============================================
+   The "Check" button (for auto-verified tasks)
+   or "Mark as Done" button (for manual tasks).
+   ============================================ */
+.task-actions {
+  margin-bottom: 20px;
+}
+
+/* Check button — big, green, inviting */
+.btn-check {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  background: linear-gradient(135deg, #27ae60, #6fcf97);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+  transition: all 0.3s ease;
+}
+
+.btn-check:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(39, 174, 96, 0.5);
+}
+
+/* "Mark as Done" button — purple variant */
+.btn-manual {
+  background: linear-gradient(135deg, #5b2d8e, #7b4bb3);
+  box-shadow: 0 4px 15px rgba(91, 45, 142, 0.3);
+}
+
+.btn-manual:hover {
+  box-shadow: 0 6px 20px rgba(91, 45, 142, 0.5);
+}
+
+/* ============================================
+   RESULT MESSAGE
+   ============================================
+   Shows success or failure feedback after
+   checking a task. Colour-coded green or red.
+   ============================================ */
+.result-message {
+  padding: 16px 20px;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+/* Success state — green */
+.result-message.success {
+  background: #e6f9ee;
+  color: #1a7a3a;
+  border: 2px solid #6fcf97;
+  animation: flash-green 0.5s ease;
+}
+
+/* Failure state — red */
+.result-message.failure {
+  background: #fde8e8;
+  color: #a33;
+  border: 2px solid #e87c7c;
+  animation: shake 0.4s ease;
+}
+
+/* Green flash animation for success */
+@keyframes flash-green {
+  0% { background: #6fcf97; }
+  100% { background: #e6f9ee; }
+}
+
+/* Shake animation for failure */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(8px); }
+  60% { transform: translateX(-6px); }
+  80% { transform: translateX(6px); }
+}
+
+/* ============================================
+   PREVIEW SECTION
+   ============================================
+   An iframe at the bottom that shows a live
+   preview of the Floofballs landing page.
+   ============================================ */
+.preview-section {
+  padding: 24px 40px 40px;
+  background: #f8f6fc;
+  border-top: 2px solid #e8e4f0;
+}
+
+.preview-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.1rem;
+  color: #5b2d8e;
+  margin-bottom: 12px;
+}
+
+/* The iframe itself — styled with rounded corners and a border */
+.preview-iframe {
+  width: 100%;
+  height: 400px;
+  border: 2px solid #e8e4f0;
+  border-radius: 16px;
+  background: #fff;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================
+   On small screens, stack the sidebar above
+   the main panel instead of side-by-side.
+   ============================================ */
+@media (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    max-height: 200px;
+  }
+
+  .main-panel {
+    padding: 24px;
+  }
+
+  .task-title {
+    font-size: 1.4rem;
+  }
+
+  .preview-section {
+    padding: 20px;
+  }
+}

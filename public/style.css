@@ -1,0 +1,397 @@
+/* ============================================
+   Floofballs Landing Page — Stylesheet
+   ============================================
+   This file controls all the visual styling for
+   the Floofballs landing page. It uses a bright,
+   playful palette of orange, yellow, and deep purple.
+
+   Fonts:
+   - Fredoka One — used for all headings (fun, rounded)
+   - Nunito — used for body text (clean, friendly)
+   ============================================ */
+
+/* ============================================
+   RESET & BASE STYLES
+   ============================================
+   Remove default margins/padding and set up
+   the base font, colours, and box-sizing for
+   the entire page.
+   ============================================ */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  color: #2d1b4e;
+  background-color: #fffaf5;
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+/* ============================================
+   SECTION TITLES
+   ============================================
+   Shared style for all section headings.
+   Uses Fredoka One for that bold, fun look.
+   ============================================ */
+.section-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  color: #2d1b4e;
+}
+
+/* ============================================
+   BUTTONS
+   ============================================
+   Two button styles: primary (orange, filled)
+   and secondary (outlined). Both have rounded
+   corners and smooth hover transitions.
+   ============================================ */
+
+/* Base button styles shared by all buttons */
+.btn {
+  font-family: 'Nunito', sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  padding: 14px 36px;
+  border-radius: 50px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+/* Primary button — bright orange with white text */
+.btn-primary {
+  background: linear-gradient(135deg, #ff6b35, #ffb347);
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(255, 107, 53, 0.4);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.6);
+}
+
+/* Secondary button — outlined style with purple border */
+.btn-secondary {
+  background: transparent;
+  color: #5b2d8e;
+  border: 3px solid #5b2d8e;
+}
+
+.btn-secondary:hover {
+  background: #5b2d8e;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+/* Large button variant — used in the CTA footer */
+.btn-large {
+  font-size: 1.3rem;
+  padding: 18px 48px;
+}
+
+/* ============================================
+   HERO SECTION
+   ============================================
+   The big, bold opening of the page. Uses a
+   deep purple gradient background with white text.
+   ============================================ */
+
+/* ============================================
+   TASK 3: Make the hero section taller
+   ============================================
+   The hero section feels a bit cramped.
+   Find the .hero rule below and increase the
+   padding-top and padding-bottom values.
+   Try something like: padding: 120px 2rem
+   ============================================ */
+
+.hero {
+  background: linear-gradient(135deg, #2d1b4e, #5b2d8e, #7b4bb3);
+  color: #fff;
+  text-align: center;
+  padding: 80px 2rem;
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Container for the hero text and elements */
+.hero-content {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Main headline — big, bold, unmissable */
+.hero-title {
+  font-family: 'Fredoka One', cursive;
+  font-size: 4rem;
+  margin-bottom: 1rem;
+  line-height: 1.2;
+}
+
+/* Subheading below the main headline */
+.hero-subtitle {
+  font-size: 1.5rem;
+  margin-bottom: 2.5rem;
+  opacity: 0.9;
+  font-weight: 600;
+}
+
+/* Colourful gradient circle — a fun visual placeholder */
+.hero-circle {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #ffb347, #ff6b35, #ff4500);
+  margin: 0 auto 2.5rem auto;
+  box-shadow: 0 10px 40px rgba(255, 107, 53, 0.5);
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Floating animation for the hero circle */
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-15px); }
+}
+
+/* Container for the CTA buttons — allows spacing between them */
+.hero-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* Style for hero images added by users (Task 2) */
+#hero-image {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   FEATURES SECTION
+   ============================================
+   Shows the three key "features" of Floofballs.
+   Uses a grid layout for the feature cards.
+   ============================================ */
+
+/* ============================================
+   TASK 4: Give the features section a new background colour
+   ============================================
+   The features section below has a default
+   background-color of #f3f0ff (light lavender).
+   Change it to any colour you like!
+   ============================================ */
+
+.features {
+  padding: 80px 2rem;
+  background-color: #f3f0ff;
+}
+
+/* Grid layout for the feature cards — responsive 3-column layout */
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   TASK 5: Make the feature cards bigger
+   ============================================
+   The feature cards below look a bit small.
+   Increase the padding to at least 2rem (32px)
+   to give them more breathing room.
+   ============================================ */
+
+/* Individual feature cards — white with rounded corners */
+.feature-card {
+  background: #fff;
+  padding: 1.5rem;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(45, 27, 78, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(45, 27, 78, 0.15);
+}
+
+/* Large emoji icon at the top of each card */
+.feature-icon {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* Card heading */
+.feature-card h3 {
+  font-family: 'Fredoka One', cursive;
+  font-size: 1.3rem;
+  margin-bottom: 0.5rem;
+  color: #2d1b4e;
+}
+
+/* Card description text */
+.feature-card p {
+  font-size: 1rem;
+  color: #5a4a6e;
+  line-height: 1.5;
+}
+
+/* ============================================
+   TESTIMONIALS SECTION
+   ============================================
+   Funny fake testimonials from "customers".
+   Adds humour and personality to the page.
+   ============================================ */
+.testimonials {
+  padding: 80px 2rem;
+  background: linear-gradient(135deg, #fff5e6, #fff0d6);
+}
+
+/* Grid layout for testimonial cards */
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Individual testimonial cards */
+.testimonial-card {
+  background: #fff;
+  padding: 2rem;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(45, 27, 78, 0.08);
+  border-left: 5px solid #ff6b35;
+}
+
+/* The testimonial quote text */
+.testimonial-text {
+  font-size: 1.15rem;
+  font-style: italic;
+  margin-bottom: 1rem;
+  color: #2d1b4e;
+  line-height: 1.6;
+}
+
+/* The testimonial author name */
+.testimonial-author {
+  font-weight: 700;
+  color: #5b2d8e;
+}
+
+/* ============================================
+   LIVE COUNTER SECTION
+   ============================================
+   Displays a fun animated counter that shows
+   how many Floofballs have been "sold today".
+   ============================================ */
+.counter-section {
+  padding: 60px 2rem;
+  text-align: center;
+  background: #2d1b4e;
+}
+
+/* The counter display — big, bold, orange text */
+#floof-counter {
+  font-family: 'Fredoka One', cursive;
+  font-size: 2.5rem;
+  color: #ffb347;
+  padding: 20px;
+}
+
+/* ============================================
+   CTA / FOOTER SECTION
+   ============================================
+   A big colourful closing call-to-action with
+   a "Shop Now" button, followed by a footer.
+   ============================================ */
+.cta-footer {
+  padding: 80px 2rem;
+  text-align: center;
+  background: linear-gradient(135deg, #ff6b35, #ffb347);
+  color: #fff;
+}
+
+/* CTA heading */
+.cta-heading {
+  font-family: 'Fredoka One', cursive;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+/* Override button colours for the CTA section */
+.cta-footer .btn-primary {
+  background: #2d1b4e;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(45, 27, 78, 0.4);
+}
+
+.cta-footer .btn-primary:hover {
+  box-shadow: 0 6px 25px rgba(45, 27, 78, 0.6);
+}
+
+/* Small footer at the bottom of the page */
+.footer {
+  padding: 20px 2rem;
+  text-align: center;
+  background: #1a0f2e;
+  color: #a89bc2;
+  font-size: 0.9rem;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================
+   Adjustments for smaller screens to keep
+   everything readable and usable on mobile.
+   ============================================ */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.2rem;
+  }
+
+  .hero-circle {
+    width: 150px;
+    height: 150px;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .cta-heading {
+    font-size: 2rem;
+  }
+
+  #floof-counter {
+    font-size: 1.8rem;
+  }
+}

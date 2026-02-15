@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Floofballs — The Squishiest, Most Pointless Balls on the Planet</title>
+
+  <!-- Google Fonts: Fredoka One for headings, Nunito for body text -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Main stylesheet for the landing page -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       HERO SECTION
+       The big, bold, eye-catching opening of the page.
+       It introduces Floofballs with a headline, subheading,
+       a colourful gradient circle, and a CTA button.
+       ============================================================ -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1 class="hero-title">Meet Floofballs. &#x1F7E0;</h1>
+      <p class="hero-subtitle">The squishiest, most pointless balls on the planet.</p>
+
+      <!-- Colourful CSS gradient circle — acts as a fun placeholder image -->
+      <div class="hero-circle"></div>
+
+      <!-- ============================================
+           TASK 2: Add an image to the hero section
+           ============================================
+           Right now the hero just has a coloured circle.
+           Add an <img> tag below the circle div above.
+           Use any fun image URL you like, or try:
+           https://picsum.photos/400/400
+           Give the img an id of: hero-image
+           ============================================ -->
+
+      <!-- CTA buttons area -->
+      <div class="hero-buttons">
+        <button class="btn btn-primary" id="cta-button">Get Floofballed</button>
+
+        <!-- ============================================
+             TASK 1: Add a second CTA button
+             ============================================
+             Below the "Get Floofballed" button, add a
+             second button that says "Watch the Video"
+             Give it two classes: btn and btn - secondary
+             (no spaces in the second class name)
+             ============================================ -->
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FEATURES SECTION
+       Highlights the three (hilariously pointless) selling points
+       of Floofballs. Each feature lives in its own card.
+       ============================================================ -->
+  <section class="features">
+    <h2 class="section-title">Why Floofballs?</h2>
+
+    <!-- ============================================
+         TASK 6: Add a fourth feature card
+         ============================================
+         Inside the features-grid div below, add a
+         new div with the same class as the other cards.
+         Give it:
+         - Any emoji in a span (with the feature-icon class)
+         - A heading in an h3
+         - A paragraph with a fun description
+         Follow the pattern of the three cards below.
+         ============================================ -->
+
+    <div class="features-grid">
+      <!-- Feature card 1: Squishy -->
+      <div class="feature-card">
+        <span class="feature-icon">&#x1F7E1;</span>
+        <h3>Extremely Squishy</h3>
+        <p>So squishy it's almost irresponsible.</p>
+      </div>
+
+      <!-- Feature card 2: Colours -->
+      <div class="feature-card">
+        <span class="feature-icon">&#x1F3A8;</span>
+        <h3>17 Bold Colours</h3>
+        <p>From Mango Madness to Midnight Purple.</p>
+      </div>
+
+      <!-- Feature card 3: Zero Purpose -->
+      <div class="feature-card">
+        <span class="feature-icon">&#x1F937;</span>
+        <h3>Zero Purpose</h3>
+        <p>Scientifically proven to do absolutely nothing useful.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       TESTIMONIALS SECTION
+       Fake (but funny) testimonials from "real" Floofball owners.
+       These add personality and humour to the page.
+       ============================================================ -->
+  <section class="testimonials">
+    <h2 class="section-title">People are talking &#x1F4AC;</h2>
+
+    <div class="testimonials-grid">
+      <!-- Testimonial 1 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I bought one. Now I have twelve. Send help."</p>
+        <p class="testimonial-author">— Dave, 34</p>
+      </div>
+
+      <!-- Testimonial 2 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">"My dog is scared of it. That makes it better somehow."</p>
+        <p class="testimonial-author">— Priya, 28</p>
+      </div>
+
+      <!-- Testimonial 3 -->
+      <div class="testimonial-card">
+        <p class="testimonial-text">"I brought one to the office. Productivity dropped 40%. Worth it."</p>
+        <p class="testimonial-author">— Marcus, 41</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LIVE COUNTER SECTION
+       Displays a fun animated counter of "Floofballs sold today".
+       The counter starts at 0 and increments via JavaScript.
+       ============================================================ -->
+  <section class="counter-section">
+    <div id="floof-counter">0 Floofballs sold today</div>
+  </section>
+
+  <!-- ============================================================
+       CTA / FOOTER SECTION
+       A big, bold closing call-to-action with a "Shop Now" button,
+       followed by a small footer with copyright text.
+       ============================================================ -->
+  <section class="cta-footer">
+    <h2 class="cta-heading">Ready to get Floofballed?</h2>
+    <button class="btn btn-primary btn-large">Shop Now — From &pound;9.99</button>
+  </section>
+
+  <footer class="footer">
+    <p>&copy; 2025 Floofballs Ltd. Not responsible for any squishing-related incidents.</p>
+  </footer>
+
+  <!-- Main JavaScript file for the landing page -->
+  <script src="app.js"></script>
+</body>
+</html>
